@@ -1,5 +1,8 @@
 import React from 'react';
 
+function rgb(r,g,b){
+	return "#" + (r).toString(16) + (g).toString(16) + (b).toString(16);
+}
 // class Test extends React.Component {
 //   render(){
 //     return (
@@ -26,6 +29,9 @@ var App = React.createClass({
 		});
 	},
 	render: function(){
+		var stylez = {
+			fill: rgb(this.state.red,this.state.green,this.state.blue)
+		};
 		return (
 			<div>
 				<NumInput 	
@@ -52,6 +58,9 @@ var App = React.createClass({
 					val={+this.state.blue}
 					update={this.update}
 					label="Blue" />
+				<svg style={stylez} width={400} height={400}>
+					<rect width={400} height={400} />
+				</svg>
 			</div>
 		);
 	}
